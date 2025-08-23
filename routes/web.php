@@ -12,5 +12,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware('auth.session');
 Route::get('/ver-pdf/{id_clinica}/{id_laudo}', [DashboardController::class, 'verPDF'])
     ->name('ver.pdf');
+Route::get('/serve-pdf/{id_clinica}/{id_laudo}', [DashboardController::class, 'servePDF'])
+    ->name('serve.pdf');
 Route::get('/download-pdf/{id_clinica}/{id_laudo}', [DashboardController::class, 'downloadPDF'])
     ->name('download.pdf');

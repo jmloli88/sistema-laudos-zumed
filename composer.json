@@ -7,7 +7,6 @@
     "require": {
         "php": "^8.2",
         "firebase/php-jwt": "^6.10",
-        "google/cloud-firestore": "^1.47",
         "grpc/grpc": "^1.57",
         "guzzlehttp/guzzle": "^7.9",
         "kreait/firebase-php": "^7.16",

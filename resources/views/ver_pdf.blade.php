@@ -3,6 +3,11 @@
 <head>
     <title>PDF Viewer</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
         .pdf-container {
             width: 100%;
             height: 90vh;
@@ -19,29 +24,49 @@
             padding: 10px;
             background: #f5f5f5;
             border-bottom: 1px solid #ddd;
+            display: flex;
+            gap: 10px;
         }
-        .print-btn {
+        .btn {
             padding: 8px 15px;
-            background: #4CAF50;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .print-btn {
+            background: #4CAF50;
         }
         .print-btn:hover {
             background: #45a049;
+        }
+        .download-btn {
+            background: #2196F3;
+        }
+        .download-btn:hover {
+            background: #1976D2;
+        }
+        .back-btn {
+            background: #757575;
+        }
+        .back-btn:hover {
+            background: #616161;
         }
     </style>
 </head>
 <body>
 <div class="controls">
-    <button class="print-btn" onclick="printPDF()">Imprimir PDF</button>
+    <button class="btn print-btn" onclick="printPDF()">Imprimir PDF</button>
+    <a href="{{ $pdfUrl }}" download class="btn download-btn">Descargar PDF</a>
+    <button class="btn back-btn" onclick="window.history.back()">Volver</button>
 </div>
 <div class="pdf-container">
     <iframe
         id="pdf-viewer"
-        src="https://docs.google.com/viewer?url={{ urlencode($pdfUrl) }}&embedded=true&toolbar=1"
+        src="{{ $pdfUrl }}"
         class="pdf-iframe"
         allowfullscreen>
     </iframe>
@@ -49,32 +74,9 @@
 
 <script>
     function printPDF() {
-        // Opción 1: Abrir la ventana de impresión de Google Docs
-        const currentSrc = document.getElementById('pdf-viewer').src;
-        const printUrl = currentSrc.replace('embedded=true', 'embedded=false');
-        window.open(printUrl, '_blank');
-
-        // Opción 2: Imprimir directamente el PDF original
-        // window.open('{{ $pdfUrl }}', '_blank');
-
-        window.close();
+        // Abrir el PDF en nueva ventana para imprimir
+        window.open('{{ $pdfUrl }}', '_blank');
     }
-
-    // Mejorar la carga del visor
-    document.getElementById('pdf-viewer').onload = function() {
-        // Intentar forzar la visibilidad de los controles de Google Docs
-        const iframe = document.getElementById('pdf-viewer');
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-        if (iframeDoc) {
-            const toolbarStyle = document.createElement('style');
-            toolbarStyle.textContent = `
-                    .toolbar { display: block !important; }
-                    .toolbar-wrapper { display: block !important; }
-                `;
-            iframeDoc.head.appendChild(toolbarStyle);
-        }
-    };
 </script>
 </body>
 </html>

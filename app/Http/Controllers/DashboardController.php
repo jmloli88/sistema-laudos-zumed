@@ -76,13 +76,45 @@ class DashboardController extends Controller
 
     public function verPDF($id_clinica, $id_laudo)
     {
-        // Obtener nombre de la clínica
-        $clinica = $this->firebaseService->getClinicaById($id_clinica);
-        $nombre_clinica = $clinica['nombre'] ?? '';
-
-        // Generar URL del PDF en Firebase Storage
-        $pdfUrl = $this->firebaseService->getPDFUrl($nombre_clinica, $id_laudo);
+        // En lugar de generar URL externa, usar endpoint interno
+        $pdfUrl = route('serve.pdf', ['id_clinica' => $id_clinica, 'id_laudo' => $id_laudo]);
         return view('ver_pdf', compact('pdfUrl'));
+    }
+
+    /**
+     * Sirve el PDF directamente desde el servidor con headers correctos
+     */
+    public function servePDF($id_clinica, $id_laudo)
+    {
+        try {
+            // Obtener nombre de la clínica
+            $clinica = $this->firebaseService->getClinicaById($id_clinica);
+            $nombre_clinica = $clinica['nombre'] ?? '';
+
+            // No agregar .pdf si ya está incluido en el id_laudo
+            $path = "LAUDOS/{$nombre_clinica}/{$id_laudo}";
+            if (!str_ends_with($id_laudo, '.pdf')) {
+                $path .= '.pdf';
+            }
+            
+            // Descargar el contenido directamente desde Firebase Storage
+            $pdfContent = $this->firebaseService->downloadFileContent($path);
+            
+            if (!$pdfContent) {
+                abort(404, 'PDF no encontrado');
+            }
+            
+            // Servir el PDF con headers correctos para visualización
+            return response($pdfContent)
+                ->header('Content-Type', 'application/pdf')
+                ->header('Content-Disposition', 'inline; filename="laudo-'.$id_laudo.'.pdf"')
+                ->header('Cache-Control', 'public, max-age=3600')
+                ->header('X-Frame-Options', 'SAMEORIGIN');
+                
+        } catch (\Exception $e) {
+            \Log::error('Error al servir PDF: ' . $e->getMessage());
+            abort(500, 'Error interno del servidor');
+        }
     }
 
     /**
@@ -94,20 +126,43 @@ class DashboardController extends Controller
      */
     public function downloadPDF($id_clinica, $id_laudo)
     {
-        // Obtener nombre de la clínica
-        $clinica = $this->firebaseService->getClinicaById($id_clinica);
-        $nombre_clinica = $clinica['nombre'] ?? '';
+        try {
+            // Obtener nombre de la clínica
+            $clinica = $this->firebaseService->getClinicaById($id_clinica);
+            $nombre_clinica = $clinica['nombre'] ?? '';
 
-        // Generar URL del PDF en Firebase Storage
-        $pdfUrl = $this->firebaseService->getPDFUrl($nombre_clinica, $id_laudo);
-        
-        // Obtener el contenido del PDF
-        $pdfContent = file_get_contents($pdfUrl);
-        
-        // Generar respuesta para descarga directa
-        return response($pdfContent)
-            ->header('Content-Type', 'application/pdf')
-            ->header('Content-Disposition', 'attachment; filename="laudo-'.$id_laudo.'.pdf"');
+            \Log::info("Descarga PDF - ID Clínica: {$id_clinica}, Nombre Clínica: '{$nombre_clinica}', ID Laudo: {$id_laudo}");
+
+            // No agregar .pdf si ya está incluido en el id_laudo
+            $path = "LAUDOS/{$nombre_clinica}/{$id_laudo}";
+            if (!str_ends_with($id_laudo, '.pdf')) {
+                $path .= '.pdf';
+            }
+            
+            \Log::info("Ruta completa del archivo: {$path}");
+            
+            // Descargar el contenido directamente desde Firebase Storage
+            $pdfContent = $this->firebaseService->downloadFileContent($path);
+            
+            if (!$pdfContent) {
+                \Log::error("No se pudo obtener el contenido del archivo: {$path}");
+                return response()->json(['error' => 'El archivo PDF no existe o no se pudo descargar'], 404);
+            }
+            
+            // Generar nombre de archivo para descarga
+            $filename = str_ends_with($id_laudo, '.pdf') ? $id_laudo : $id_laudo . '.pdf';
+            
+            \Log::info("Descarga exitosa del archivo: {$path}");
+            
+            // Generar respuesta para descarga directa
+            return response($pdfContent)
+                ->header('Content-Type', 'application/pdf')
+                ->header('Content-Disposition', 'attachment; filename="' . $filename . '"');
+                
+        } catch (\Exception $e) {
+            \Log::error('Error al descargar PDF: ' . $e->getMessage());
+            return response()->json(['error' => 'Error interno del servidor: ' . $e->getMessage()], 500);
+        }
     }
 
     /**

@@ -1,0 +1,198 @@
+[2025-08-22 12:05:27] production.ERROR: file_get_contents(https://storage.googleapis.com/laudos-zumed.appspot.com/LAUDOS/CLINICA%20PRUEBA/7eMgYwIWdSW7va68Kf58.pdf?GoogleAccessId=firebase-adminsdk-fbsvc%40laudos-zumed.iam.gserviceaccount.com&amp;Expires=1755878727&amp;Signature=W0DnG84psho%2BNl%2Bl%2Fcj9VmAfjFViFMAFrOyFCMD6MhoCjkV81JmS1CKsSv2bC2Wug0lhpcw6ITOVk4BVvNaimx8SUSnfwnZ3aXFi2wB3PkTJ2%2BdHsCbqR1IOcEw8yMNKknbNb2V9NLvP8bj%2Bj1cv3qxMM3HUTyTk%2FrMs6X9GZeeRTaI7RJ3Iqhb0kD8wUfsj8z015RnffZ6JqB59246McVlQcLg2kkDVaCjY%2Bk5OlKeirAHZg06K%2BlZg6W8AqEmD2s%2FY60J7KdRU9FpbqRorjVNzYgMEC%2BPZVk%2BePcc7%2FwEw1mRMeYWChHsUtlT5FK8i8oZfusvlXVncRshJe6n94Q%3D%3D): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ {"exception":"[object] (ErrorException(code: 0): file_get_contents(https://storage.googleapis.com/laudos-zumed.appspot.com/LAUDOS/CLINICA%20PRUEBA/7eMgYwIWdSW7va68Kf58.pdf?GoogleAccessId=firebase-adminsdk-fbsvc%40laudos-zumed.iam.gserviceaccount.com&amp;Expires=1755878727&amp;Signature=W0DnG84psho%2BNl%2Bl%2Fcj9VmAfjFViFMAFrOyFCMD6MhoCjkV81JmS1CKsSv2bC2Wug0lhpcw6ITOVk4BVvNaimx8SUSnfwnZ3aXFi2wB3PkTJ2%2BdHsCbqR1IOcEw8yMNKknbNb2V9NLvP8bj%2Bj1cv3qxMM3HUTyTk%2FrMs6X9GZeeRTaI7RJ3Iqhb0kD8wUfsj8z015RnffZ6JqB59246McVlQcLg2kkDVaCjY%2Bk5OlKeirAHZg06K%2BlZg6W8AqEmD2s%2FY60J7KdRU9FpbqRorjVNzYgMEC%2BPZVk%2BePcc7%2FwEw1mRMeYWChHsUtlT5FK8i8oZfusvlXVncRshJe6n94Q%3D%3D): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ at C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\app\\Http\\Controllers\\DashboardController.php:105)
+[stacktrace]
+#0 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', 'C:\\\\Users\\\\jm_lo\\\\...', 105)
+#1 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'file_get_conten...', 'C:\\\\Users\\\\jm_lo\\\\...', 105)
+#2 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\app\\Http\\Controllers\\DashboardController.php(105): file_get_contents('https://storage...')
+#3 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(46): App\\Http\\Controllers\\DashboardController->downloadPDF('IDCLINICAPRUEBA', '7eMgYwIWdSW7va6...')
+#4 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(264): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\DashboardController), 'downloadPDF')
+#5 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(210): Illuminate\\Routing\\Route->runController()
+#6 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(808): Illuminate\\Routing\\Route->run()
+#7 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(51): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#10 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#16 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#23 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#24 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#25 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(201): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#27 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#47 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1190): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#48 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#49 C:\\Users\\jm_lo\\source\\sistema-laudos-zumed\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(23): require_once('C:\\\\Users\\\\jm_lo\\\\...')
+#50 {main}
+"} 
+[2025-08-22 12:12:40] production.WARNING: Archivo no encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 12:12:50] production.WARNING: Archivo no encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf.pdf  
+[2025-08-22 12:12:51] production.WARNING: Archivo no encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf.pdf  
+[2025-08-22 12:12:52] production.WARNING: Archivo no encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf.pdf  
+[2025-08-22 12:12:53] production.WARNING: Archivo no encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf.pdf  
+[2025-08-22 12:12:54] production.WARNING: Archivo no encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf.pdf  
+[2025-08-22 13:39:58] production.WARNING: Archivo no encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:41:51] production.WARNING: Archivo PDF no encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:42:05] production.INFO: Descarga PDF - ID Clínica: IDCLINICAPRUEBA, Nombre Clínica: 'CLINICA PRUEBA', ID Laudo: 7eMgYwIWdSW7va68Kf58  
+[2025-08-22 13:42:05] production.INFO: Ruta completa del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:42:05] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:42:05] production.INFO: Probando ruta: LAUDOS/CLINICA%20PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:42:06] production.INFO: Probando ruta: LAUDOS/CLINICA%20PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:42:06] production.INFO: Probando ruta: LAUDOS/CLINICA_PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:42:06] production.INFO: Probando ruta: LAUDOS/CLINICA_PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:42:06] production.WARNING: Archivo no encontrado en ninguna de las rutas probadas  
+[2025-08-22 13:42:06] production.ERROR: No se pudo obtener el contenido del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:43:03] production.INFO: Descarga PDF - ID Clínica: IDCLINICAPRUEBA, Nombre Clínica: 'CLINICA PRUEBA', ID Laudo: 7eMgYwIWdSW7va68Kf58  
+[2025-08-22 13:43:03] production.INFO: Ruta completa del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:43:03] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:43:04] production.INFO: Probando ruta: LAUDOS/CLINICA%20PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:43:04] production.INFO: Probando ruta: LAUDOS/CLINICA%20PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:43:04] production.INFO: Probando ruta: LAUDOS/CLINICA_PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:43:04] production.INFO: Probando ruta: LAUDOS/CLINICA_PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:43:04] production.WARNING: Archivo no encontrado en ninguna de las rutas probadas  
+[2025-08-22 13:43:04] production.ERROR: No se pudo obtener el contenido del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:44:50] production.INFO: Descarga PDF - ID Clínica: IDCLINICAPRUEBA, Nombre Clínica: 'CLINICA PRUEBA', ID Laudo: 7eMgYwIWdSW7va68Kf58  
+[2025-08-22 13:44:50] production.INFO: Ruta completa del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:44:51] production.ERROR: Error al listar carpetas: {"error":{"code":404,"message":"The specified bucket does not exist.","errors":[{"message":"The specified bucket does not exist.","domain":"global","reason":"notFound"}]}}  
+[2025-08-22 13:44:51] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:44:51] production.INFO: Probando ruta: LAUDOS/CLINICA%20PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:44:52] production.INFO: Probando ruta: LAUDOS/CLINICA%20PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:44:52] production.INFO: Probando ruta: LAUDOS/CLINICA_PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:44:52] production.INFO: Probando ruta: LAUDOS/CLINICA_PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:44:52] production.WARNING: Archivo no encontrado en ninguna de las rutas probadas  
+[2025-08-22 13:44:52] production.ERROR: No se pudo obtener el contenido del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:10] production.INFO: Firebase Storage Bucket configurado: laudos-zumed.firebasestorage.app  
+[2025-08-22 13:47:13] production.INFO: Firebase Storage Bucket configurado: laudos-zumed.firebasestorage.app  
+[2025-08-22 13:47:13] production.INFO: Descarga PDF - ID Clínica: IDCLINICAPRUEBA, Nombre Clínica: 'CLINICA PRUEBA', ID Laudo: 7eMgYwIWdSW7va68Kf58  
+[2025-08-22 13:47:13] production.INFO: Ruta completa del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:14] production.INFO: Objeto encontrado: LAUDOS/  
+[2025-08-22 13:47:14] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:14] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:47:14] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/Hg5Mmh2yxoXz30opwJYt.pdf  
+[2025-08-22 13:47:14] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/HoPssCSxGmJYmMjnohH7.pdf  
+[2025-08-22 13:47:14] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/IK9NvbkXEHLVqD8VJBju.pdf  
+[2025-08-22 13:47:14] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/YcXw9qsAgkDrZSMvvNyy.pdf  
+[2025-08-22 13:47:14] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/zosOb1ig3w0NkM3oY96A.pdf  
+[2025-08-22 13:47:14] production.INFO: Carpetas encontradas en LAUDOS: CLINICA PRUEBA  
+[2025-08-22 13:47:14] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:15] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:47:16] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:16] production.INFO: Descarga exitosa del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:17] production.INFO: Firebase Storage Bucket configurado: laudos-zumed.firebasestorage.app  
+[2025-08-22 13:47:17] production.INFO: Descarga PDF - ID Clínica: IDCLINICAPRUEBA, Nombre Clínica: 'CLINICA PRUEBA', ID Laudo: 7eMgYwIWdSW7va68Kf58  
+[2025-08-22 13:47:17] production.INFO: Ruta completa del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:17] production.INFO: Objeto encontrado: LAUDOS/  
+[2025-08-22 13:47:17] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:17] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:47:17] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/Hg5Mmh2yxoXz30opwJYt.pdf  
+[2025-08-22 13:47:17] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/HoPssCSxGmJYmMjnohH7.pdf  
+[2025-08-22 13:47:17] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/IK9NvbkXEHLVqD8VJBju.pdf  
+[2025-08-22 13:47:17] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/YcXw9qsAgkDrZSMvvNyy.pdf  
+[2025-08-22 13:47:17] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/zosOb1ig3w0NkM3oY96A.pdf  
+[2025-08-22 13:47:17] production.INFO: Carpetas encontradas en LAUDOS: CLINICA PRUEBA  
+[2025-08-22 13:47:17] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:18] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:47:20] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:20] production.INFO: Descarga exitosa del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:20] production.INFO: Firebase Storage Bucket configurado: laudos-zumed.firebasestorage.app  
+[2025-08-22 13:47:21] production.INFO: Descarga PDF - ID Clínica: IDCLINICAPRUEBA, Nombre Clínica: 'CLINICA PRUEBA', ID Laudo: 7eMgYwIWdSW7va68Kf58  
+[2025-08-22 13:47:21] production.INFO: Ruta completa del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:21] production.INFO: Objeto encontrado: LAUDOS/  
+[2025-08-22 13:47:21] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:21] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:47:21] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/Hg5Mmh2yxoXz30opwJYt.pdf  
+[2025-08-22 13:47:21] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/HoPssCSxGmJYmMjnohH7.pdf  
+[2025-08-22 13:47:21] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/IK9NvbkXEHLVqD8VJBju.pdf  
+[2025-08-22 13:47:21] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/YcXw9qsAgkDrZSMvvNyy.pdf  
+[2025-08-22 13:47:21] production.INFO: Objeto encontrado: LAUDOS/CLINICA PRUEBA/zosOb1ig3w0NkM3oY96A.pdf  
+[2025-08-22 13:47:21] production.INFO: Carpetas encontradas en LAUDOS: CLINICA PRUEBA  
+[2025-08-22 13:47:21] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:22] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:47:24] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:47:24] production.INFO: Descarga exitosa del archivo: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:52:11] production.ERROR: Error al generar URL de Firebase Storage: Invalid expiration.  
+[2025-08-22 13:52:19] production.INFO: Descarga PDF - ID Clínica: IDCLINICAPRUEBA, Nombre Clínica: 'CLINICA PRUEBA', ID Laudo: 8wNNOVXRY6wByHR2rJND  
+[2025-08-22 13:52:19] production.INFO: Ruta completa del archivo: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:19] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:21] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf!  
+[2025-08-22 13:52:23] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:23] production.INFO: Descarga exitosa del archivo: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:23] production.INFO: Descarga PDF - ID Clínica: IDCLINICAPRUEBA, Nombre Clínica: 'CLINICA PRUEBA', ID Laudo: 8wNNOVXRY6wByHR2rJND  
+[2025-08-22 13:52:23] production.INFO: Ruta completa del archivo: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:23] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:24] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf!  
+[2025-08-22 13:52:27] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:27] production.INFO: Descarga exitosa del archivo: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:27] production.INFO: Descarga PDF - ID Clínica: IDCLINICAPRUEBA, Nombre Clínica: 'CLINICA PRUEBA', ID Laudo: 8wNNOVXRY6wByHR2rJND  
+[2025-08-22 13:52:27] production.INFO: Ruta completa del archivo: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:27] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:28] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf!  
+[2025-08-22 13:52:30] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:52:30] production.INFO: Descarga exitosa del archivo: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:53:02] production.ERROR: Error al generar URL de Firebase Storage: Invalid expiration.  
+[2025-08-22 13:55:05] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:55:06] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf!  
+[2025-08-22 13:55:08] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:55:09] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:55:10] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf!  
+[2025-08-22 13:55:12] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:55:12] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:55:13] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf!  
+[2025-08-22 13:55:15] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/8wNNOVXRY6wByHR2rJND.pdf  
+[2025-08-22 13:55:20] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:20] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:55:22] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:23] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:24] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:55:26] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:26] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:27] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:55:29] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:39] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:39] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:55:41] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:41] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:43] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:55:44] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:45] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:46] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:55:47] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:54] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:55:54] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:55:56] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:56:04] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:56:05] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:56:07] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:56:07] production.INFO: Probando ruta: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
+[2025-08-22 13:56:08] production.INFO: ¡Archivo encontrado en: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf!  
+[2025-08-22 13:56:10] production.INFO: Archivo descargado exitosamente desde: LAUDOS/CLINICA PRUEBA/7eMgYwIWdSW7va68Kf58.pdf  
